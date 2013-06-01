@@ -1,11 +1,12 @@
 
 define([
-    'mustache'
-], function(Mustache) {
+    'mustache',
+    'text!templates/entry.hjs'
+], function(Mustache, entryTemplate) {
     
     return {
         
-        //rumor: Mustache.compile(rumorTemplate)
+        entry: Mustache.compile(entryTemplate)
         
     };
     

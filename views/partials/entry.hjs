@@ -1,0 +1,4 @@
+
+<div class="entry entry-type-{{type}}">
+    {{content}}
+</div>

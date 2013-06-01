@@ -1,0 +1,12 @@
+
+@mixin entries() {
+  
+  .entry {
+    padding: 12px 0 12px 40px;
+    border-bottom: 1px dashed #CCCCCC;
+  }
+  
+  .entry-type-twitter {
+    background: 0 8px url("/img/logos/twitter-32.png") no-repeat transparent;
+  }
+}

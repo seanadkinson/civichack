@@ -4,19 +4,44 @@
 
 {{$content}}
 
-    Enter details to search for for:
+<div class="span4">
 
+    <h3>Information</h3>
+    
     <div class="form-horizontal">
         <a class="login-btn login-twitter" href="/auth/twitter"></a>
+        <input id="twitter-username" type="text" placeholder="Twitter Username"/>
     </div>
 
-    <p>
+    <!--<p>
         {{#providers}}
             {{type}}: {{username}} ({{id}})
         {{/providers}}
-    </p>
-
+    </p>-->
+    <br/>
+    
     <button class="btn btn-primary js-search-profile">Search My Public Profile</button>
+</div>
+
+<div class="span8">
+    <ul class="nav nav-tabs">
+        <li class="tab-general active"><a href="#tab-general-content" data-toggle="tab">General</a></li>
+        <li class="tab-bad"><a href="#tab-bad-content" data-toggle="tab">The Bad (<span class="count">0</span>)</a></li>
+        <li class="tab-good"><a href="#tab-good-content" data-toggle="tab">The Good (<span class="count">0</span>)</a></li>
+    </ul>
+    
+    <div class="tab-content entry-tabs">
+        <div class="tab-pane active" id="tab-general-content">
+            Fill in details on the left, and click "Search" to find public data about yourself.
+        </div>
+        <div class="tab-pane" id="tab-bad-content">
+            Nothing Found!
+        </div>
+        <div class="tab-pane" id="tab-good-content">
+            Nothing Found!
+        </div>
+    </div>
+</div>
 
 {{/content}}
 
