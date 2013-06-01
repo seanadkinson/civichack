@@ -65,3 +65,35 @@ body {
   padding: 5px 10px;
   background-color: #eee;
 }
+
+/* line 2, ../sass/_providers.scss */
+.login-btn {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 32px;
+  height: 32px;
+}
+
+/* line 7, ../sass/_providers.scss */
+.login-facebook {
+  background-image: url('/img/logos/facebook-32.png?1368918775');
+}
+
+/* line 8, ../sass/_providers.scss */
+.login-google {
+  background-image: url('/img/logos/google-32.png?1368918775');
+}
+
+/* line 9, ../sass/_providers.scss */
+.login-twitter {
+  background-image: url('/img/logos/twitter-32.png?1368918775');
+}
+
+/* line 10, ../sass/_providers.scss */
+.login-yahoo {
+  background-image: url('/img/logos/yahoo-32.png?1368918775');
+}

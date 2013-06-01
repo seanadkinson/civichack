@@ -1,0 +1,10 @@
+
+.login-btn {
+  @include inline-block;
+  width: 32px;
+  height: 32px;
+}
+.login-facebook { background-image: image-url('logos/facebook-32.png'); }
+.login-google { background-image: image-url('logos/google-32.png'); }
+.login-twitter { background-image: image-url('logos/twitter-32.png'); }
+.login-yahoo { background-image: image-url('logos/yahoo-32.png'); }

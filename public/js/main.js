@@ -31,7 +31,8 @@ require([
     'bootstrap',
     'jquery.timeago',
     'jquery.isotope',
-    'app/plugins'
+    'app/plugins',
+    'app/profile'
 ], function($) {
     
 });

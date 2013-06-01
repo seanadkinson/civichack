@@ -4,8 +4,19 @@
 
 {{$content}}
 
+    Enter details to search for for:
 
-    The Civic Hack Homepage
+    <div class="form-horizontal">
+        <a class="login-btn login-twitter" href="/auth/twitter"></a>
+    </div>
+
+    <p>
+        {{#providers}}
+            {{type}}: {{username}} ({{id}})
+        {{/providers}}
+    </p>
+
+    <button class="btn btn-primary js-search-profile">Search My Public Profile</button>
 
 {{/content}}
 

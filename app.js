@@ -5,8 +5,11 @@
 var express = require('express'),
     http = require('http'),
     path = require('path'),
+    passport = require('passport'),
+    auth = require('./auth'),
     routes = require('./routes');
 
+var search = require('./services/search');
 
 // Never die!
 process.addListener("uncaughtException", function (err) {
@@ -29,6 +32,8 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('bsd'));
 app.use(express.session());
 app.use(express.compress());
+app.use(passport.initialize());
+app.use(auth.authLocals);
 app.use(function(req, res, next) {
     res.locals.appVersion = process.env['APP_VERSION'] || 4;
     next();
@@ -47,6 +52,9 @@ if ('development' == app.get('env')) {
 }
 app.use(handleError);
 
+auth.init(app);
+search.init(app);
+
 // Views
 app.locals.partials = {
     layout: 'template/layout',
@@ -56,7 +64,7 @@ app.locals.partials = {
 app.get('/', routes.index);
 
 http.createServer(app).listen(app.get('port'), function () {
-    console.log('Express server listening on port ' + app.get('port'));
+    console.log('Express server listening on port ' + app.get('port') + ', mode: ' + process.env['NODE_ENV']);
 });
 
 
