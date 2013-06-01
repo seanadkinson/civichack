@@ -1,0 +1,14 @@
+{{<layout}}
+
+{{$bodyClass}}error-page{{/bodyClass}}
+
+{{$content}}
+
+<h3>Uh Oh!  An Error Occurred</h3>
+<p>
+    {{error}}
+</p>
+
+{{/content}}
+
+{{/layout}}

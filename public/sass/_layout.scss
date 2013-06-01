@@ -1,0 +1,40 @@
+
+html {
+  height: 100%;
+  font-family: tahoma, verdana, sans-serif;
+}
+
+body {
+  min-height: 100%;
+  padding: 0 20px  20px  20px;
+    background-color: #FFFFFF;
+    color: #333333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.container {
+  background-color: white;
+}
+
+.content{
+  margin-top:70px;
+        @media (max-width:500px),(max-device-width:320px) and (orientation:portrait) {
+       margin-top:20px;
+        }
+}
+
+.content-row {
+  padding-top: 5px;
+}
+
+.inline-block {
+  @include inline-block(top);
+}
+
+.indent {
+  padding-left: 20px;
+}
+

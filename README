@@ -1,0 +1,50 @@
+
+To run the application, open Terminal
+> cd ~/work/rumormill
+> export NODE_ENV=development
+> node app.js
+
+When making CSS changes, open Terminal (or Command+T for new tab)
+> cd public/
+> compass watch
+
+Only edit public/sass/*.scss files for CSS changes
+ - The public/css/*.css files are compiled from the .scss
+
+CSS changes will NOT require a restart
+
+Templates are in views/*.hjs, which is just mustache syntax
+Changes to the template DO require a restart
+
+To bust cache:
+- Edit app.js
+- Find APP_VERSION
+- Increment the number
+
+To restart the server
+ - From the first terminal tab (running "node app.js")
+ - Push Ctrl+C to quit
+ - Hit UP, and ENTER, to re-run "node app.js"
+
+To pull the latest changes
+> cd ~/work/rumormill
+> git stash
+> git pull
+> git stash pop
+
+If you ever end up with a strange dialog after pulling (you are committing the merge)
+- Press ":wq"
+This completes the "merge commit"
+
+When ready to commit
+> cd ~/work/rumormill
+> git status   <-- View what files you have touched
+> git add .
+> git commit -m "SOME MESSAGE"
+> git push origin master
+
+When ready to push live (AFTER "git commit")
+> git push heroku master
+
+
+That's it

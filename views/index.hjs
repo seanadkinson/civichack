@@ -1,0 +1,12 @@
+{{<layout}}
+
+{{$bodyClass}}home-page{{/bodyClass}}
+
+{{$content}}
+
+
+    The Civic Hack Homepage
+
+{{/content}}
+
+{{/layout}}

@@ -1,0 +1,67 @@
+/* line 2, ../sass/_layout.scss */
+html {
+  height: 100%;
+  font-family: tahoma, verdana, sans-serif;
+}
+
+/* line 7, ../sass/_layout.scss */
+body {
+  min-height: 100%;
+  padding: 0 20px 20px 20px;
+  background-color: #FFFFFF;
+  color: #333333;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+
+/* line 18, ../sass/_layout.scss */
+.container {
+  background-color: white;
+}
+
+/* line 22, ../sass/_layout.scss */
+.content {
+  margin-top: 70px;
+}
+@media (max-width: 500px), (max-device-width: 320px) and (orientation: portrait) {
+  /* line 22, ../sass/_layout.scss */
+  .content {
+    margin-top: 20px;
+  }
+}
+
+/* line 29, ../sass/_layout.scss */
+.content-row {
+  padding-top: 5px;
+}
+
+/* line 33, ../sass/_layout.scss */
+.inline-block {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+
+/* line 37, ../sass/_layout.scss */
+.indent {
+  padding-left: 20px;
+}
+
+/* line 2, ../sass/_header.scss */
+.header-container {
+  padding: 10px 15px;
+  background-color: #eeeeee;
+}
+
+/* line 2, ../sass/_footer.scss */
+.footer-container {
+  text-align: right;
+  font-size: 8pt;
+  padding: 5px 10px;
+  background-color: #eee;
+}
