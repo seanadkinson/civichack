@@ -76,6 +76,7 @@ function analyzeTweets(tweets) {
     tweets.forEach(function(tweet) {
         var entry = {
             type: 'twitter',
+            entryName: 'Tweet',
             content: tweet.text,
             data: tweet
         };

@@ -8,40 +8,49 @@ define([
     var analyzer;
     
     var init = function() {
+        initSearch();
+        initActions();
+    };
+    
+    var initSearch = function() {
         $('.js-search-profile').click(function() {
             var twitter = $('#twitter-username');
             if (!twitter.val()) {
                 return;
             }
-            
+
             var $this = $(this);
             var prevText = $this.html();
             $this.prop('disabled', true)
                 .html('Searching...');
-            
+
             $.get('/search', {
                 twitter: twitter.val()
             }).done(function(res) {
-                analyzer = new GeneralAnalyzer();
-                addEntries($('#tab-bad-content'), res.bad);
-                addEntries($('#tab-good-content'), res.good);
-                addGeneralInfo();
-            }).always(function() {
-                $this.prop('disabled', false)
-                    .html(prevText);
-            });
+                    analyzer = new GeneralAnalyzer();
+                    addEntries($('#tab-bad-content'), res.bad);
+                    addEntries($('#tab-good-content'), res.good);
+                    addGeneralInfo();
+                }).always(function() {
+                    $this.prop('disabled', false)
+                        .html(prevText);
+                });
         });
     };
     
     var addEntries = function($tab, entries) {
         $tab.html('');
         var length = entries.length;
-        $('.nav-tabs a[href="#' + $tab.attr('id') + '"] .count').html(length);
+        getCountElForTab($tab).html(length);
         for (var i=0; i<length; i++) {
             var entry = entries[i];
             $tab.append(templates.entry(entry));
             analyzer.analyzeEntry(entry);
         }
+    };
+    
+    var getCountElForTab = function($tab) {
+        return $('.nav-tabs a[href="#' + $tab.attr('id') + '"] .count');
     };
 
     var addGeneralInfo = function() {
@@ -55,6 +64,18 @@ define([
                 $nameElement.append('<span>' + names[i] + '</span>');
             }
         }
+    };
+    
+    var initActions = function() {
+        $(document).click('.js-remove-entry', function(e) {
+            var $entry = $(e.target).parents('.js-entry');
+            var $tab = $entry.parents('.tab-pane');
+            $entry.fadeOut(function() {
+                getCountElForTab($tab).html(function(i, html) {
+                    return html - 1;
+                });
+            });
+        });
     };
     
     $(document).ready(init);

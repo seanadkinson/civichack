@@ -6,18 +6,48 @@
 
 <div class="span4">
 
-    <h3>Information</h3>
+    <h3>Search Information</h3>
     
-    <div class="form-horizontal">
-        <a class="login-btn login-twitter" href="/auth/twitter"></a>
-        <input id="twitter-username" type="text" placeholder="Twitter Username"/>
+    <div id="search-form" class="form-horizontal">
+        <h5>General Information</h5>
+        <div class="control-group">
+            <label class="control-label" for="nameInput">Name</label>
+            <div class="controls">
+                <input type="text" id="nameInput" placeholder="Name or Full Name">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="emailInput">Email</label>
+            <div class="controls">
+                <input type="text" id="emailInput" placeholder="Email Address">
+            </div>
+        </div>
+        
+        <h5>Social Accounts</h5>
+        <div class="control-group">
+            <a class="login-btn login-twitter" href="/auth/twitter"></a>
+            {{#providers.twitter}}
+                <input id="twitter-username" type="text" disabled value="{{username}}"/>
+                <a href="/auth/twitter/remove"><i class="icon icon-remove"></i></a>
+            {{/providers.twitter}}
+            {{^providers.twitter}}
+                <input id="twitter-username" type="text" placeholder="Twitter Username"/>
+            {{/providers.twitter}}
+        </div>
+        <div class="control-group">
+            <a class="login-btn login-facebook" href="/auth/facebook"></a>
+            <input id="facebook-username" type="text" placeholder="Facebook Username"/>
+        </div>
+        <div class="control-group">
+            <a class="login-btn login-google" href="/auth/google"></a>
+            <input id="google-username" type="text" placeholder="Google Username/Email"/>
+        </div>
+        <div class="control-group">
+            <a class="login-btn login-yahoo" href="/auth/yahoo"></a>
+            <input id="yahoo-username" type="text" placeholder="Yahoo Username/Email"/>
+        </div>
     </div>
 
-    <!--<p>
-        {{#providers}}
-            {{type}}: {{username}} ({{id}})
-        {{/providers}}
-    </p>-->
     <br/>
     
     <button class="btn btn-primary js-search-profile">Search My Public Profile</button>

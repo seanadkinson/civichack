@@ -1,4 +1,10 @@
 
-<div class="entry entry-type-{{type}}">
+<div class="entry js-entry entry-type-{{type}}">
     {{content}}
+    <div class="entry-actions">
+        <div class="pull-right">
+            <button class="btn btn-mini btn-danger js-remove-entry"><i class="icon icon-white icon-remove"></i> Delete {{entryName}}</button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
 </div>

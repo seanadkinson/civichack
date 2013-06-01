@@ -2,8 +2,12 @@
 @mixin entries() {
   
   .entry {
-    padding: 12px 0 12px 40px;
+    padding: 12px 0 2px 40px;
     border-bottom: 1px dashed #CCCCCC;
+  }
+  
+  .entry-actions {
+    padding: 5px;
   }
   
   .entry-type-twitter {

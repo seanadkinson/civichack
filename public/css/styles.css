@@ -66,6 +66,24 @@ body {
   background-color: #eee;
 }
 
+/* line 2, ../sass/_forms.scss */
+.form-controls {
+  padding-bottom: 3px;
+}
+
+/* line 7, ../sass/_forms.scss */
+#search-form .control-group {
+  margin-bottom: 3px;
+}
+/* line 10, ../sass/_forms.scss */
+#search-form .control-label {
+  width: 50px;
+}
+/* line 13, ../sass/_forms.scss */
+#search-form .controls {
+  margin-left: 60px;
+}
+
 /* line 2, ../sass/_providers.scss */
 .login-btn {
   display: -moz-inline-stack;
@@ -100,10 +118,14 @@ body {
 
 /* line 4, ../sass/modules/entries.scss */
 .entry-tabs .entry {
-  padding: 12px 0 12px 40px;
+  padding: 12px 0 2px 40px;
   border-bottom: 1px dashed #cccccc;
 }
 /* line 9, ../sass/modules/entries.scss */
+.entry-tabs .entry-actions {
+  padding: 5px;
+}
+/* line 13, ../sass/modules/entries.scss */
 .entry-tabs .entry-type-twitter {
   background: 0 8px url("/img/logos/twitter-32.png") no-repeat transparent;
 }
